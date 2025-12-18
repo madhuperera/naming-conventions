@@ -8,6 +8,7 @@ Naming conventions for Microsoft Intune resources.
   - [Enrollment Tokens](#enrollment-tokens)
   - [Enrollment Profiles](#enrollment-profiles)
   - [VPP Tokens](#vpp-tokens)
+- [Device Filters](#device-filters)
 
 ---
 
@@ -92,6 +93,32 @@ IOS-VPP-NZ-ABM-A:N-01
 IOS-VPP-US-ABM-A:Y-01
 IOS-VPP-AU-ASM-A:N-01
 IOS-VPP-UK-ABM-A:Y-02
+```
+
+---
+
+## Device Filters
+
+**Format:** `DF-<OSType>-<FilterType>-<Description>`
+
+**Components:**
+- `DF` - Device Filter prefix
+- `<OSType>` - Operating system type
+  - `WIN` = Windows
+  - `IOS` = iOS/iPadOS
+  - `AOS` = Android
+  - `MOS` = macOS
+- `<FilterType>` - Type of filter
+  - `D` = Managed Device
+  - `U` = Managed App
+- `<Description>` - Descriptive name for the filter
+
+**Examples:**
+```
+DF-IOS-D-AllCompanyOwnedDevices
+DF-WIN-D-CorporateLaptops
+DF-AOS-U-ManagedApps
+DF-MOS-D-ExecutiveDevices
 ```
 
 ---
