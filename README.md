@@ -5,6 +5,7 @@ Comprehensive naming conventions for Microsoft 365, Azure, Intune, and Entra ID 
 ## 📋 Table of Contents
 
 - [Entra ID Resources](entra-id.md)
+- [Defender XDR](defender-xdr.md)
 - Azure Resources *(Coming Soon)*
 - Microsoft 365 *(Coming Soon)*
 - Intune *(Coming Soon)*
