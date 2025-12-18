@@ -127,4 +127,28 @@ CL001-CN-B-M365APPS-Global-UnknownLocations&Algeria
 
 ---
 
+## Administrative Units
+
+**Format:** `AU-<MembershipType>-<IsRestricted>-<Description>`
+
+**Components:**
+- `AU` - Administrative Unit prefix
+- `<MembershipType>` - Type of membership
+  - `A` = Assigned (Static)
+  - `DU` = Dynamic User
+  - `DD` = Dynamic Device
+- `<IsRestricted>` - Restriction status
+  - `RES` = Restricted
+  - `UNRES` = Unrestricted
+- `<Description>` - Descriptive name for the admin unit (no specific pattern)
+
+**Examples:**
+```
+AU-DU-RES-PrivilegedAdminZone
+AU-A-UNRES-FinanceDepartment
+AU-DD-RES-CorporateDevices
+```
+
+---
+
 [Back to Main Documentation](README.md)
