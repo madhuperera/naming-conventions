@@ -8,6 +8,10 @@ Naming conventions for Microsoft Intune resources.
   - [Enrollment Tokens](#enrollment-tokens)
   - [Enrollment Profiles](#enrollment-profiles)
   - [VPP Tokens](#vpp-tokens)
+- [Configuration Policies](#configuration-policies)
+  - [Policy Types](#policy-types)
+  - [Microsoft Defender for Endpoint (MDE)](#microsoft-defender-for-endpoint-mde)
+  - [Baseline Policies](#baseline-policies)
 - [Device Filters](#device-filters)
 
 ---
@@ -93,6 +97,78 @@ IOS-VPP-NZ-ABM-A:N-01
 IOS-VPP-US-ABM-A:Y-01
 IOS-VPP-AU-ASM-A:N-01
 IOS-VPP-UK-ABM-A:Y-02
+```
+
+---
+
+## Configuration Policies
+
+### Policy Types
+
+**Format:** `<OSType>-<PolicyType>-<Target>-<Scope/Purpose>-<Sequence>`
+
+**Components:**
+- `<OSType>` - Operating system type
+  - `WIN` = Windows
+  - `IOS` = iOS/iPadOS
+  - `AOS` = Android
+  - `MOS` = macOS
+- `<PolicyType>` - Type of policy
+  - `SEC` = Security
+  - `PRO` = Profile / Configuration
+  - `COM` = Compliance
+  - `UPD` = Updates
+- `<Target>` - Target scope
+  - `D` = Device
+  - `U` = User
+- `<Scope/Purpose>` - Description of scope and purpose (see special categories below)
+- `<Sequence>` - Two-digit sequence number (01, 02, 03, etc.)
+
+**Examples:**
+```
+WIN-PRO-D-MicrosoftEdgeSettings-01
+WIN-PRO-D-OneDriveBaseline-01
+WIN-SEC-D-LAPS-01
+WIN-COM-D-BitLockerRequired-01
+WIN-UPD-D-WindowsUpdates-RingBroad
+```
+
+---
+
+### Microsoft Defender for Endpoint (MDE)
+
+For Microsoft Defender for Endpoint policies, use `MDE` prefix in the Scope/Purpose component.
+
+**Format:** `<OSType>-SEC-<Target>-MDE-<Function>-<Sequence>`
+
+**Examples:**
+```
+WIN-SEC-D-MDE-ASRRules-01
+WIN-SEC-D-MDE-AVControls-01
+WIN-SEC-D-MDE-AVUpdate-RingBroad
+WIN-SEC-D-MDE-DefenderForEndpoint-01
+WIN-SEC-D-MDE-FirewallLogging-01
+WIN-SEC-D-MDE-Onboarding-01
+WIN-SEC-D-MDE-SecurityExperience-01
+WIN-SEC-D-MDE-Tag:CloudAutopilot-01
+WIN-SEC-D-MDE-Tag:HybridAutopilot-01
+WIN-SEC-D-MDE-Tag:HybridJoined-01
+```
+
+---
+
+### Baseline Policies
+
+For Security Baseline and other baseline policies, use `Baseline` prefix in the Scope/Purpose component.
+
+**Format:** `<OSType>-SEC-<Target>-Baseline-<Application>-<Sequence>`
+
+**Examples:**
+```
+WIN-SEC-D-Baseline-M365Apps-01
+WIN-SEC-D-Baseline-MSEdge-01
+WIN-SEC-D-Baseline-WindowsMDM-01
+WIN-SEC-D-Baseline-Windows-01
 ```
 
 ---
