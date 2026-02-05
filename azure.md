@@ -19,6 +19,8 @@ Naming conventions for Microsoft Azure resources.
 **Components:**
 - `<Type>` - Subscription type
   - `CSP` = Cloud Service Provider
+  - `PAYG` = Pay as you go
+  - `MCAE` = Microsoft Customer Agreement Enterprise
   - `NFP` = Not-for-Profit Grant
 - `<SID>` - System ID / Environment
   - `PROD` = Production
