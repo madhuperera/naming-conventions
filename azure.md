@@ -14,7 +14,7 @@ Naming conventions for Microsoft Azure resources.
 
 ## Subscriptions
 
-**Format:** `<Type>-<SID>-<Location>-SUB-<Sequence>`
+**Format:** `<Type>-<Role>-<Environment>-SUB-<Sequence>`
 
 **Components:**
 - `<Type>` - Subscription type
@@ -22,23 +22,25 @@ Naming conventions for Microsoft Azure resources.
   - `PAYG` = Pay as you go
   - `MCAE` = Microsoft Customer Agreement Enterprise
   - `NFP` = Not-for-Profit Grant
-- `<SID>` - System ID / Environment
+- `<Role>` - Subscription functional role
+  - `PLATFORM` = Shared infrastructure and core services
+  - `SECURITY` = Sentinel, Defender integrations, logging/security tooling
+  - `DATA` = Analytics, SQL, data services
+  - `APP` = Application hosting
+  - `SANDBOX` = Testing / temporary
+  - `MGMT` = Management tooling / automation / monitoring
+- `<Environment>` - Environment identifier
   - `PROD` = Production
   - `DEV` = Development
-  - Other system identifiers as needed
-- `<Location>` - Azure region
-  - `AUEAST` = Australia East
-  - `USWEST` = US West
-  - `USEAST` = US East
-  - Other region codes as needed
+  - Other environment codes as needed
 - `SUB` - Subscription suffix
-- `<Sequence>` - Two-digit sequence number (01, 02, 03, etc.)
+- `<Sequence>` - Sequence number (01, 02, 03, etc.)
 
 **Examples:**
 ```
-CSP-PROD-AUEAST-SUB-01
-NFP-DEV-USWEST-SUB-01
-CSP-PROD-USEAST-SUB-02
+MCAE-PLATFORM-PROD-SUB-01
+MCAE-SECURITY-PROD-SUB-02
+NFP-SANDBOX-DEV-SUB-01
 ```
 
 ---
